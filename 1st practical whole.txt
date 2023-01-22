@@ -3,16 +3,8 @@ Router(config)#Snmp-server co
 Router(config)#Snmp-server community r
 Router(config)#Snmp-server community ro
 %SNMP-5-WARMSTART: SNMP agent on host Router is undergoing a warm start
-Router(config)# snp
-Router(config)# snm
-Router(config)# snmp-server c
-Router(config)# snmp-server community r
-Router(config)# snmp-server community re
-Router(config)# snmp-server community w
 Router(config)# snmp-server community wr
 Router(config)# snmp-server community write rw
-
-
 
 SYSLOG AND NETFLOW
 Router>enable
@@ -24,7 +16,6 @@ Router(config-if)#
 Router(config-if)#exit
 Router(config)#interface GigabitEthernet0/0
 Router(config-if)#ip address  
-% Incomplete command.
 Router(config-if)#ip address 10.0.0.1 255.0.0.0
 Router(config-if)#ip address 10.0.0.1 255.0.0.0
 Router(config-if)#
@@ -46,116 +37,28 @@ Router(config-if)#
 
 %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
 
-Router(config-if)#
-Router(config-if)#
-Router(config-if)#
-Router(config-if)#
-Router(config-if)#se
-Router(config-if)#service-policy 
-Router(config-if)#service-t
-Router(config-if)#service-tim
-Router(config-if)#service t
-Router(config-if)#service tim
 Router(config-if)#exit
-Router(config)#ser
-Router(config)#service tim
-Router(config)#service timestamps log da
-Router(config)#service timestamps log datetime ms
 Router(config)#service timestamps log datetime msec
-Router(config)#in
-Router(config)#interface g0/0.1
-Router(config-subif)#
-*Mar 01, 00:06:17.066: %LINK-5-CHANGED: Interface GigabitEthernet0/0.1, changed state to up
-*Mar 01, 00:06:17.066: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.1, changed state to up
-Router(config-subif)#
-Router(config-subif)#
-Router(config-subif)#exit
-Router(config)#interface g0/0.1
-Router(config-subif)# 
-Router(config-subif)#
-Router(config-subif)#
-Router(config-subif)#
-Router(config-subif)#end
+Router(config)#logging host 10.0.0.2
+Router(config)#int g0/0.2
 Router#configure terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 Router(config)#router rip
 Router(config-router)#
 *Mar 01, 00:08:07.088: SYS-5-CONFIG_I: Configured from console by consolenetwork 10.0.0.0
 Router(config-router)#network 30.0.0.0
-Router(config-router)#exir
-                         ^
-% Invalid input detected at '^' marker.
-	
+
 Router(config-router)#exit
-Router(config)#
-Router(config)#
-Router(config)#
 Router(config)#interface g0/0.1
-Router(config-subif)#
-Router(config-subif)#
 Router(config-subif)#no shut
-Router(config-subif)#
-Router(config-subif)#
-Router(config-subif)#
 Router(config-subif)#end
 Router#configure terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 Router(config)#interface GigabitEthernet0/0
-Router(config-if)#
-*Mar 01, 00:10:16.1010: SYS-5-CONFIG_I: Configured from console by console
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/1
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/0
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/1
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/0
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/1
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/0
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/1
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/0
-Router(config-if)#
-Router(config-if)#exit
-Router(config)#interface GigabitEthernet0/1
-Router(config-if)#exit
-Router(config)#
-Router(config)#
-Router(config)#
+
 Router(config)#int g0/0
-Router(config-if)#ip f
-Router(config-if)#ip flow ing
 Router(config-if)#ip flow ingress 
-Router(config-if)#ip f
-Router(config-if)#ip flow eg
 Router(config-if)#ip flow egress 
-Router(config-if)#ip f
-Router(config-if)#ip flow-e
-Router(config-if)#ip flow-ex
-Router(config-if)#ip flow-export de
-Router(config-if)#ip flow-export dest
 Router(config-if)#ip flow-export destination 10.0.0.2 99
-Router(config)#ip f
-Router(config)#ip fl
-Router(config)#ip flow-export s
 Router(config)#ip flow-export source g0/0
-Router(config)#
-Router(config)#end
-Router#
-*Mar 01, 00:16:03.1616: SYS-5-CONFIG_I: Configured from console by console
-Router#
-Router#show ip 
-Router#show ip ca
-Router#show ip cache f
 Router#show ip cache flow 
